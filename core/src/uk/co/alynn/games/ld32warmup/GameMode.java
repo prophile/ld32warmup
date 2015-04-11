@@ -5,4 +5,5 @@ public interface GameMode {
     public void draw();
     public void activate();
     public void deactivate();
+    public void screenDimensions(int w, int h);
 }
