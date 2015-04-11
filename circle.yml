@@ -1,0 +1,9 @@
+dependencies:
+    override:
+        - gradle deps
+test:
+    override:
+        - gradle dist
+    post:
+        - cp desktop/build/libs/desktop-1.0.jar $CIRCLE_ARTIFACTS/warmup.jar
+        - cd html/build ; zip -9r $CIRCLE_ARTIFACTS/warmup.zip dist
